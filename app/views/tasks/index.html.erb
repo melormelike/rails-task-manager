@@ -5,7 +5,14 @@
   <% @tasks.each do |task| %>
   <div class="row>
     <div class="col-sm-6>
-  📝 <%= task['title'] %> <%= task['details'] %> - <%= task[:completed] %> <%= link_to "See the task", task_path(task)%> </div>
+  📝 <%= task['title'] %> <%= task['details'] %> -
+
+  <% if task[:completed]   %>
+  <i class="fa fa-check-square-o"></i> This task is completed 😎
+  <% else %>
+  <i class="fa fa-square-o"></i> This task is not completed yet 🧐
+  <% end %>
+  <%= link_to "See the task", task_path(task)%> </div>
   <%end%>
   </div>
 </div>
