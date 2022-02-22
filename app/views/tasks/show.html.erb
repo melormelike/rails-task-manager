@@ -1,5 +1,23 @@
 
-<p><%= @task.title %> - <%= @task.details %> - <%= @task.completed %></p>
-<p><%= link_to "back to the list", tasks_path%></p>
-<p><%= link_to "Edit a task", edit_task_path%></p>
-<p><%= link_to "Delete a task", task_path, method: :delete, data: { confirm: "Are you sure?" }%></p>
+
+<h1>📆<%= @task.title %><br>
+<% if @task.completed %>
+  <i class="fa fa-check-square-o"></i> This task is completed 😎
+<% else %>
+  <i class="fa fa-square-o"></i> This task is not completed yet 🧐
+<% end %>
+</h1>
+<div container class="d-flex">
+<div class="row">
+  <div class="col-sm-6">
+    <%= link_to "Back to Lists", tasks_path%>
+  </div>
+  <div class="col-sm-6">
+    <%= link_to "Edit a task", edit_task_path%>
+  </div>
+  <div class="col-sm-6">
+  <%= link_to "Delete a task", task_path, method: :delete, data: { confirm: "Are you sure?" }%>
+  </div>
+</div>
+</div>
+<i class="fal fa-check-square"
